@@ -2,8 +2,7 @@ import axios from "axios";
 import Lock from "./icons/Lock";
 import { ethers } from "ethers";
 import { useAccount } from "wagmi";
-import { useEffect, useState } from "react";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 
 const CurrentDeposit = () => {
   const { address } = useAccount();
@@ -49,7 +48,7 @@ const CurrentDeposit = () => {
       </p>
       <span className="flex items-center justify-start mt-2">
         {" "}
-        <Lock /> Savings
+        <Lock /> Locked
       </span>
     </div>
   );

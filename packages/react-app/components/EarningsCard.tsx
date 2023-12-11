@@ -1,15 +1,18 @@
 import { ethers } from "ethers";
 import useGetBalance from "../hooks/useGetBalance";
-import { useState } from "react";
 import { useContractRead, useAccount } from "wagmi";
 import connect from "../constants/connect";
 import Balance from "./icons/Balance";
 import Earnings from "./icons/Earnings";
 import CurrentDeposit from "./CurrentDeposit";
+import { EarnContext } from "../contexts/EarnContext";
+import { useContext } from "react";
 
-const SavingsCard = () => {
+const EarningsCard = () => {
   const balance = useGetBalance();
   const { address } = useAccount();
+  //@ts-ignore
+  const { isWithdraw, setIsWithdraw } = useContext(EarnContext);
 
   const { data: mcusdBal } = useContractRead({
     //@ts-ignore
@@ -22,7 +25,7 @@ const SavingsCard = () => {
   });
 
   return (
-    <div className="relative bg-gray/5 rounded-lg py-8 px-3 lg:px-8 w-full overflow-hidden shadow-md">
+    <div className="relative mt-3 bg-gray/5 rounded-lg py-8 px-3 lg:px-8 w-full overflow-hidden shadow-md">
       <div className="flex flex-col gap-y-5">
         <div className="flex items-center justify-between">
           <CurrentDeposit />
@@ -85,6 +88,7 @@ const SavingsCard = () => {
               }{" "}
               cUSD
             </span>
+
             <small className="text-xs text-gray/40">
               ~{" "}
               {
@@ -97,9 +101,15 @@ const SavingsCard = () => {
               NGN
             </small>
           </p>
+          <div
+            className="flex justify-center text-green-700 p-2 underline "
+            onClick={() => setIsWithdraw(!isWithdraw)}
+          >
+            {isWithdraw ? "Deposit" : "Withdraw"}
+          </div>
         </div>
       </div>
     </div>
   );
 };
-export default SavingsCard;
+export default EarningsCard;

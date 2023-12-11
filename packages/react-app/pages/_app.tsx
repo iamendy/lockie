@@ -4,6 +4,7 @@ import "@rainbow-me/rainbowkit/styles.css";
 import type { AppProps } from "next/app";
 import { WagmiConfig, configureChains, createConfig } from "wagmi";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
+import { publicProvider } from "wagmi/providers/public";
 import Layout from "../components/Layout";
 import "../styles/globals.css";
 import { useEffect, useState } from "react";
@@ -19,7 +20,7 @@ const { chains, publicClient } = configureChains(
   [
     jsonRpcProvider({
       rpc: (chain) => ({
-        http: `https://celo-mainnet.infura.io/v3/a5ee4de0e74f482abfc6971a09cd41c8`,
+        http: `https://celo-mainnet.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_KEY}`,
       }),
     }),
     //publicProvider(),
@@ -27,19 +28,19 @@ const { chains, publicClient } = configureChains(
 );
 
 const appInfo = {
-  appName: "Lockie - One-click access to defi",
+  appName: "Lockie - Accesible savings and yield on Minipay",
 };
 
 const connectors = celoGroups({
   chains,
   projectId,
-  appName: "Lockie - One-click access to defi",
+  appName: "Lockie - Accesible savings and yield on Minipay",
 });
 
 const wagmiConfig = createConfig({
   connectors,
   publicClient: publicClient,
-  autoConnect: false,
+  autoConnect: true,
 });
 
 function App({ Component, pageProps }: AppProps) {
