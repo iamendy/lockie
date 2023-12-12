@@ -28,19 +28,19 @@ const { chains, publicClient } = configureChains(
 );
 
 const appInfo = {
-  appName: "Lockie - Accesible savings and yield on Minipay",
+  appName: "Lockie - Accessible savings and yield on Minipay",
 };
 
 const connectors = celoGroups({
   chains,
   projectId,
-  appName: "Lockie - Accesible savings and yield on Minipay",
+  appName: "Lockie - Accessible savings and yield on Minipay",
 });
 
 const wagmiConfig = createConfig({
   connectors,
   publicClient: publicClient,
-  autoConnect: true,
+  autoConnect: false,
 });
 
 function App({ Component, pageProps }: AppProps) {
