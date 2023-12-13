@@ -101,11 +101,10 @@ const EarningsCard = () => {
               NGN
             </small>
           </p>
-          <div
-            className="flex justify-center text-green-700 p-2 underline "
-            onClick={() => setIsWithdraw(!isWithdraw)}
-          >
-            {isWithdraw ? "Deposit" : "Withdraw"}
+          <div className="flex justify-center text-green-700 p-2 underline">
+            <span onClick={() => setIsWithdraw(!isWithdraw)}>
+              {isWithdraw ? "Deposit" : "Withdraw"}
+            </span>
           </div>
         </div>
       </div>

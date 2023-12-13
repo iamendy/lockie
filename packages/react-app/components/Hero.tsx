@@ -36,7 +36,7 @@ const Hero = () => {
                 href="/dashboard"
                 className="bg-yellow font-bold text-base-100 px-5 py-3 rounded-lg lg:px-9"
               >
-                Start saving →
+                Launch App →
               </Link>
             ) : (
               <button

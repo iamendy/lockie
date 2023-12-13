@@ -4,7 +4,6 @@ import "@rainbow-me/rainbowkit/styles.css";
 import type { AppProps } from "next/app";
 import { WagmiConfig, configureChains, createConfig } from "wagmi";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
-import { publicProvider } from "wagmi/providers/public";
 import Layout from "../components/Layout";
 import "../styles/globals.css";
 import { useEffect, useState } from "react";
@@ -23,7 +22,6 @@ const { chains, publicClient } = configureChains(
         http: `https://celo-mainnet.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_KEY}`,
       }),
     }),
-    //publicProvider(),
   ]
 );
 

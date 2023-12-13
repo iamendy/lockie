@@ -185,7 +185,7 @@ const LockCard = () => {
                 onClick={() => setIsOpen(true)}
                 className={`${
                   isCountdownCompleted ? "text-green-700" : "text-red-400 "
-                }`}
+                } underline`}
               >
                 Break Piggy
               </button>
