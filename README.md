@@ -1,6 +1,6 @@
 # Lockie [Minipay]
 
-Live Demo - [Watch Video](https://drive.google.com/file/d/1yUIWSLDOX2UzLD5x91ifjGiSGzbOJjm3/view) <br />
+Live Demo - [Watch Video](https://) <br />
 Minipay Link - [Lockie dApp](https://lockie-minipay.vercel.app) <br />
 Slides - [Presentation Slides](https://he-s3.s3.amazonaws.com/media/sprint/lancelot-hackathon-4/team/1887941/b21642elockie_slides.pdf)
 
@@ -9,6 +9,8 @@ Slides - [Presentation Slides](https://he-s3.s3.amazonaws.com/media/sprint/lance
 Lockie is an open-source widget that allows users to save better and earn yield on Minipay.
 
 We aim to help Africans hedge against hyperinflation by integrating with Minipay to provide an intuitive interface for saving and easily getting yield on cUSD.
+
+Lockie integrates with Moola to make yield generation secure,decentralized and accessible.
 
 ![Lockie Dashboard](https://lockie-minipay.vercel.app/img/preview.png)
 
