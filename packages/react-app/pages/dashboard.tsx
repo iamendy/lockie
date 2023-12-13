@@ -11,7 +11,7 @@ const Dashboard = () => {
   const [selected, setSelected] = useState("save");
 
   return (
-    <section className="p-4 lg:p-6 lg:px-16 2xl:px-24 gap-x-9 flex flex-col lg:flex-row justify-between mx-auto">
+    <section className="p-4 pt-9 lg:p-6 lg:px-16 2xl:px-24 gap-x-9 flex flex-col lg:flex-row justify-between mx-auto">
       {/* <h2 className="font-medium mb-2 lg:hidden overflow-x-scroll">
         Hi {address?.substring(0, 8)},
       </h2> */}

@@ -1,4 +1,4 @@
-# Lockie x BWC [Minipay]
+# Lockie [Minipay]
 
 Live Demo - [Watch Video](https://drive.google.com/file/d/1yUIWSLDOX2UzLD5x91ifjGiSGzbOJjm3/view) <br />
 Minipay Link - [Lockie dApp](https://lockie-minipay.vercel.app) <br />
@@ -6,11 +6,9 @@ Slides - [Presentation Slides](https://he-s3.s3.amazonaws.com/media/sprint/lance
 
 ## ✨ Description
 
-[Lockie](https://lockie-minipay.vercel.app) is a Minipay widget that allows users save in cUSD and earn interest on their savings.
+Lockie is an open-source widget that allows users to save better and earn yield on Minipay.
 
-This works by connecting Lockie with [MOOLA market](https://moola.market/) on CELO network, to provide a simple interface where users can deposit into the lending pool, earn interest and withdraw at any time!
-
-The insipiration behind Lockie is to help Africans combat hyperinflation by leveraging on Minipay and the CELO DeFi ecosystem.
+We aim to help Africans hedge against hyperinflation by integrating with Minipay to provide an intuitive interface for saving and easily getting yield on cUSD.
 
 ![Lockie Dashboard](https://lockie-minipay.vercel.app/img/preview.png)
 
@@ -18,13 +16,13 @@ The insipiration behind Lockie is to help Africans combat hyperinflation by leve
 
 We created and deployed Lockie smart contract on Celo Mainnet:
 
-1. Lockie 0x97912976B292131c35c96041fB282c098D23F45B - [View on Celo scan](https://celoscan.io/address/0x97912976B292131c35c96041fB282c098D23F45B)
+1. Lockie 0x7a457555f836281c0A4E4dffDcF82878e5Fa0d9b - [View on Celo scan](https://celoscan.io/address/v)
 
 Here are some of the recent transactions on Lockie:
 
-1. Savings [View txn on Celo Scan](https://celoscan.io/tx/0x002b93034c28e7ddd483b3b60e30196a6def0675f43fc982c7c3d7955b0bb28a)
+1. Savings [View txn on Celo Scan](https://celoscan.io/tx/0xe579d538f22cb96f45f744d356274e998e4426fc7ed932e784914177d9e41d94)
 
-2. Withdrawal [View txn on Celo Scan](https://celoscan.io/tx/0x30c3dd1c2544aab8ed53f17edcd278f4ff25ac3f2c72ac8088089cf107956aed)
+2. Withdraw [View txn on Celo Scan](https://celoscan.io/tx/0x926e516a67bf03b434b14ddea28eb8c96d895bdaaa3b3c477c90377386d67213)
 
 This is an original work by our team. We built our solution using: **`CELO Composer`**, **`NextJs/Typescript`**, **`Wagmi`**, **`Rainbowkit`**, **`TailwindCSS`** and **`Remix`**
 

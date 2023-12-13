@@ -1,31 +1,38 @@
 {
-    "name": "@lockie/hardhat",
-    "version": "1.0.0",
-    "license": "MIT",
-    "scripts": {
-        "test": "hardhat test",
-        "test-local": "hardhat test --network hardhat",
-        "create-account": "hardhat create-account",
-        "accounts": "hardhat accounts",
-        "devchain": "npx celo-devchain --port 8545",
-        "deploy": "hardhat deploy --export-all deployments/hardhat_contracts.json",
-        "deploy-reset-watch": "hardhat deploy --reset --watch --export-all deployments/hardhat_contracts.json",
-        "watch": "node scripts/watch.js",
-        "fork-mainnet": "ganache --fork.url https://forno.celo.org --wallet.mnemonic 'concert load couple harbor equip island argue ramp clarify fence smart topic' --wallet.accountKeysPath './account_keys.json' --gasPrice 875000000"
-    },
-    "devDependencies": {
-        "@terminal-fi/celo-devchain": "^4.0.1",
-        "@typechain/web3-v1": "^6.0.1",
-        "bip39": "^3.0.4",
-        "dotenv": "^16.0.3",
-        "hardhat-celo": "^0.0.6",
-        "hardhat-deploy": "^0.11.19",
-        "node-watch": "^0.7.3"
-    },
-    "dependencies": {
-        "@celo/contracts": "^9.0.0",
-        "@openzeppelin/contracts": "^4.9.3",
-        "ganache": "^7.5.0",
-        "typescript": "^4.8.4"
-    }
+  "name": "lockie",
+  "version": "1.0.0",
+  "description": "Custom Celo Composer project.",
+  "private": true,
+  "author": "Celo",
+  "license": "MIT",
+  "scripts": {
+    "react-app:dev": "yarn workspace @lockie/react-app dev",
+    "react-app:build": "yarn workspace @lockie/react-app build",
+    "react-app:start": "yarn workspace @lockie/react-app start",
+    "react-app:lint": "yarn workspace @lockie/react-app lint",
+    "hardhat:test": "yarn workspace @lockie/hardhat test",
+    "hardhat:test-local": "yarn workspace @lockie/hardhat test-local",
+    "hardhat:create-account": "yarn workspace @lockie/hardhat create-account",
+    "hardhat:accounts": "yarn workspace @lockie/hardhat accounts",
+    "hardhat:devchain": "yarn workspace @lockie/hardhat devchain",
+    "hardhat:deploy": "yarn workspace @lockie/hardhat deploy",
+    "hardhat:deploy-reset-watch": "yarn workspace @lockie/hardhat deploy-reset-watch",
+    "hardhat:watch": "yarn workspace @lockie/hardhat watch",
+    "hardhat:fork-mainnet": "yarn workspace @lockie/hardhat fork-mainnet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/celo-org/celo-composer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/celo-org/celo-composer/issues"
+  },
+  "homepage": "https://github.com/celo-org/celo-composer/blob/main/README.md",
+  "workspaces": [
+    "packages/*"
+  ],
+  "keywords": [
+    "celo-composer",
+    "celo"
+  ]
 }

@@ -1,124 +1,47 @@
-# Hardhat | Celo Composer
+# Lockie [Minipay]
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+Live Demo - [Watch Video](https://drive.google.com/file/d/1yUIWSLDOX2UzLD5x91ifjGiSGzbOJjm3/view) <br />
+Minipay Link - [Lockie dApp](https://lockie-minipay.vercel.app) <br />
+Slides - [Presentation Slides](https://he-s3.s3.amazonaws.com/media/sprint/lancelot-hackathon-4/team/1887941/b21642elockie_slides.pdf)
 
-## Setup & Installation
+## ✨ Description
 
-### Alfajores Testnet Setup
+Lockie is an open-source widget that allows users to save better and earn yield on Minipay.
 
-**Note** This setup is not required when using a local development blockchain (like celo-devchain or Ganache).
+We aim to help Africans hedge against hyperinflation by integrating with Minipay to provide an intuitive interface for saving and easily getting yield on cUSD.
 
-1. Create a `.env` file similar to `.envexample`.
-2. Paste the private key in `.env`.
+![Lockie Dashboard](https://lockie-minipay.vercel.app/img/preview.png)
 
-Alternatively, you can also run the following command to generate a new account
+## 💻 How we built Lockie
 
-```sh
-npx hardhat create-account
-```
+We created and deployed Lockie smart contract on Celo Mainnet:
 
-> **Note** : Depending on how you generate your private key, you may have to prepend `0x` in the private key does not already have it prepended.
+1. Lockie 0x7a457555f836281c0A4E4dffDcF82878e5Fa0d9b - [View on Celo scan](https://celoscan.io/address/v)
 
-3. Faucet your account with the Alfajores testnet faucet [here](https://celo.org/developers/faucet).
+Here are some of the recent transactions on Lockie:
 
-## Develop
+1. Savings [View txn on Celo Scan](https://celoscan.io/tx/0xe579d538f22cb96f45f744d356274e998e4426fc7ed932e784914177d9e41d94)
 
-1. Write your contracts in `./contracts`.
-2. Update contract deployment scripts in `./deploy`.
-3. Deploy contracts with `yarn deploy` from the **root directory**. Optionally add the reset flag (`yarn deploy --reset`) to overwrite previous deployment info. The default deployment network is specified in `hardhat.config.js` and is set to `alfajores` initially. You can also overwrite previous deployments and redeploy when there are changes to the deployment script or contracts automatically by running `yarn deploy-reset-watch`. You can specify a specific network deployment directly with
+2. Withdraw [View txn on Celo Scan](https://celoscan.io/tx/0x926e516a67bf03b434b14ddea28eb8c96d895bdaaa3b3c477c90377386d67213)
 
-```bash
-npx hardhat deploy --network [network name]
-```
+This is an original work by our team. We built our solution using: **`CELO Composer`**, **`NextJs/Typescript`**, **`Wagmi`**, **`Rainbowkit`**, **`TailwindCSS`** and **`Remix`**
 
-Network configs are defined in `hardhat.config.js`.
+## 🧑‍💻 Instructions for testing locally
 
-## [Celo devchain](https://github.com/terminal-fi/celo-devchain)
+\***\* Smart contract \*\***
 
-Run a local development Celo chain with `yarn devchain` in the `packages/hardhat` folder. You can print the addresses of the [Celo protocol contracts](https://github.com/celo-org/celo-monorepo/tree/master/packages/protocol) with `npx @terminal-fi/celo-devchain --test`.
+Note: Recommend using [Remix](https://remix.ethereum.org) for quick smart contract deployment, or alternatively hardhat:
 
-This is a version of Ganache (@celo/ganache-cli) that deploys the Celo core protocol contracts when it starts.
+1. Deploy `Lockie` on Celo by running the necessary Hardhat script
 
-**NOTE:** @celo/ganache-cli works only with Node 10 or Node 12 versions. Using Node 14 or later will result in errors.
+\***\* Frontend \*\***
 
-**NOTE:** @celo/ganache-cli currently doesn't support locally signed transactions. If you send a locally signed transaction it will throw: Error: Number can only safely store up to 53 bits error and crash. Thus you have to make sure your ContractKit doesn't actually have the private keys for test addresses and send transactions to be signed by ganache-cli itself.
+2. Update your deployed `Lockie` address on the `packages/react-app/constants/connect.ts file.
 
-### Start
+3. run `cp .env.example .env`
 
-```bash
-npx celo-devchain --port 8545
-```
+4. Update the fields on the .env file with your keys
 
-or
+5. Run `yarn dev` to start the DApp on your development environment.
 
-```bash
-yarn devchain
-```
-
-### Generate Typescript bindings
-
-This setting defaults to the web3 v1 bindings because that is what is used by use-contractkit in `packages/react-app`.
-
-You can change the output directory and target in `hardhat.config.js`.
-
-```bash
-npx hardhat typechain
-```
-
-Read more about Typechain [here](https://github.com/dethcrypto/TypeChain) and more about the hardhat plugin [here](https://github.com/dethcrypto/TypeChain/tree/master/packages/hardhat).
-
-### Run sanity tests and print all core contract addresses
-
-```bash
-npx @terminal-fi/celo-devchain --test
-```
-
-## Fork mainnet with [Ganache](https://trufflesuite.com/blog/introducing-ganache-7/index.html#1-zero-config-mainnet-forking)
-
-You can get a local copy of mainnet by forking with Ganache. Learn more about [forking mainnet with Ganache here.](https://trufflesuite.com/blog/introducing-ganache-7/index.html#1-zero-config-mainnet-forking)
-
-There is a script provided (`yarn fork-mainnet`) to fork mainnet and fund the same test accounts that come with Celo devchain. Sometimes sending transactions from the first account (which defaults to `0x5409ED021D9299bf6814279A6A1411A7e866A631`) is delayed and sending test transactions from the other accounts works better for some reason. :shrug: The private keys of the associated test accounts are printed in `account_keys.json`.
-
-## Celo Core Contracts
-
-You can easily import Celo Core contracts to be used by your contracts like so:
-
-```solidity
-import '@celo/contracts/common/Accounts.sol';
-```
-
-## Verify your contracts
-
-### hardhat-celo
-
-You can easily verify your contracts deployed to the associated networks with hardhat-celo.
-
-[Reference](https://docs.celo.org/developer/verify/hardhat)
-
-```bash
-npx hardhat verify smart-contract-address parameter(s) --network alfajores
-```
-
-On Mainnet:
-
-```bash
-npx hardhat verify smart-contract-address parameter(s) --network celo
-```
-
-### Sourcify
-
-Additionally, you can easily verify your contracts deployed to the associated networks with the following commands.
-
-[Reference](https://docs.celo.org/blog/hardhat-deploy-verify)
-
-On Alfajores:
-
-```bash
-npx hardhat --network alfajores sourcify
-```
-
-On Mainnet:
-
-```bash
-npx hardhat --network celo sourcify
-```
+6. You can connect from your Minipay wallet and enjoy a world of limitless possibilities.

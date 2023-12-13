@@ -19,7 +19,7 @@ const { chains, publicClient } = configureChains(
   [
     jsonRpcProvider({
       rpc: (chain) => ({
-        http: `https://celo-mainnet.infura.io/v3/a5ee4de0e74f482abfc6971a09cd41c8`,
+        http: `https://celo-mainnet.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_KEY}`,
       }),
     }),
     //publicProvider(),
